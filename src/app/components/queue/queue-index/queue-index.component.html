@@ -1,0 +1,166 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Queue Management</a></li>
+      <li class="breadcrumb-item active"><a href="#">Cashier 3</a></li>
+    </ol>
+  </nav>
+  
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-6 mr-auto p-2">
+        <div class="container queue-payment-container">
+          <p>Payment</p>
+          <h1>Cashier 4</h1>
+          <p>Single Serving</p>
+        </div>
+      </div>
+      <div class="col-md-6 p-2">
+        <div class="d-flex">
+          <button type="button" class="btn queue-button-outline ml-auto p-2">Queue Group Details</button>
+          <button type="button" class="btn queue-button-outline ml-auto p-2"><span class="material-symbols-outlined"> history</span> Queue History</button>
+          <button type="button" class="btn queue-button ml-auto p-2" (click)="redirectCreate()"><span class="material-symbols-outlined"> add </span> Add Queue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search Queue Number, Mobile Number or Name">
+      <button class="btn btn-outline-secondary" type="button">
+        <span class="material-symbols-outlined" style="font-size: 18px;"> search </span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="container mt-3 queue_container mb-5">
+    <div class="row d-flex">
+      <div class="col-md-8 mr-auto p-2">
+        <div class="container queue_container-header">
+          <h5>ON-GOING QUEUE</h5>
+          <p>List of all on-going customer queues</p>
+        </div>
+        <table class="table table-hover queue_container-table">
+          <thead>
+            <tr>
+              <th>Queue Number</th>
+              <th>Customer Info</th>
+              <th>Type/Time Queued</th>
+              <th>Options</th>
+              <th>Serve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row-card p-2">
+              <td>
+                <h1 class="queue_container-table_queueNumber">A013</h1>
+              </td>
+              <td>
+                <p class="queue_container-table_customerInfo"><span class="material-symbols-outlined"> person </span> Item 1</p>
+                <p class="queue_container-table_customerInfo"><span class="material-symbols-outlined"> smartphone </span> Item 1</p>
+                <p class="queue_container-table_customerInfo"><span class="material-symbols-outlined"> group </span> Item 1</p>
+              </td>
+              <td class="queue_container-table_timeQueued">asdasdasd</td>
+              <td>
+                <div class="dropdown btn btn-outline-secondary">
+                  <a role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="material-symbols-outlined"> more_vert </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item">Send SMS Notification</a>
+                    <a class="dropdown-item" routerLink="id">Edit Queue</a>
+                    <a class="dropdown-item"><p class="text-danger">Remove Queue</p></a>
+                  </div>
+                </div>
+              </td>
+              
+              <td>
+                <button class="btn btn-secondary"><span class="material-symbols-outlined">
+                arrow_right_alt
+                </span></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+      </div>
+      <div class="col-md-4 p-4 customer-details-serving card">
+        <div class="container">
+         <div class="customer-details-header">
+          <h5>CURRENT SERVING</h5>
+          <p>Customer queues that are called and served</p>
+          <hr class="pt-3">
+          <p>Finish serving a queue before you can serve another one</p>
+         </div>        
+          <div class="container p-3 customer-details-container">
+            <p class="queue_number">queue number</p>
+            <h3 class="queue_number_info">A004</h3>
+            <p class="priority_info">Walk-in</p>
+            <div class="mt-4">
+              <div class="row">
+               <div class="col-sm-6 customer-details">
+                 <p>Customer Name</p>
+               </div>
+               <div class="col-sm-6 customer-info">
+                 <p>asdlasd laskdjlasjkd</p>
+               </div>
+              </div>
+              <div class="row">
+               <div class="col-sm-6 customer-details">
+                 <p>Mobile number</p>
+               </div>
+               <div class="col-sm-6 customer-info">
+                 <p>01923 01923112</p>
+               </div>
+              </div>
+              <div class="row">
+               <div class="col-sm-6 customer-details">
+                 <p>Number of People</p>
+               </div>
+               <div class="col-sm-6 customer-info">
+                 <p>3 People</p>
+               </div>
+              </div>
+           </div>
+           <div class="mt-5">
+            <div class="row">
+              <div class="col-sm-6 customer-details">
+                <p>Time Queued</p>
+              </div>
+              <div class="col-sm-6 customer-info">
+                <p>8:00 AM</p>
+              </div>
+             </div>
+             <div class="row">
+              <div class="col-sm-6 customer-details">
+                <p>Time Serve</p>
+              </div>
+              <div class="col-sm-6 customer-info">
+                <p>8:15 AM</p>
+              </div>
+             </div>
+           </div>
+           <div class="mt-3 d-flex justify-content-around p-2">
+            <div class="dropdown customer-details-button p-2">
+              <a role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="material-symbols-outlined"> more_vert </span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item">Send SMS Notification</a>
+                <a class="dropdown-item" routerLink="['queue/id']">Edit Queue</a>
+                <a class="dropdown-item"><p class="text-danger">Remove Queue</p></a>
+              </div>
+            </div>
+            <button class="btn p-2 customer-details-button"><span class="material-symbols-outlined"> volume_up </span>Notify</button>
+            <button class="btn p-2 customer-details-button-done"><span class="material-symbols-outlined"> done </span>Done</button>
+           </div>
+          </div>
+          <div class="card-footer text-muted mt-5 pt-5">
+            2 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

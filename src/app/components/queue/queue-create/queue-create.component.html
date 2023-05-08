@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-body">
+        <div class="container card-text-title">
+            <h5>Add Queue</h5>
+            <p>Fill-up fields with the customer's data</p>
+        </div>
+        <form class="create-form" (submit)="createQueue()">
+            <p>customer details</p>
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <input type="number" 
+                  class="form-control" 
+                  placeholder="Mobile Number" 
+                  name="mobile" 
+                  id="mobile"
+                  [(ngModel)]="queue.mobile"
+                  required>
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="number" 
+                  class="form-control" 
+                  placeholder="How many people" 
+                  name="peopleCount" 
+                  id="peopleCount"
+                  [(ngModel)]="queue.peopleCount"
+                  required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <input type="text" 
+                    class="form-control" 
+                    placeholder="Name (optional)" 
+                    name="name"
+                    id="name"
+                    [(ngModel)]="queue.name">
+                </div>
+                <div class="form-group col-md-10">
+                    <p>Is this queue a priority? (ex. PWD, Senior Citizen, etc.)</p>
+                    <p>If ON, this customer will be at the top of the queue. Will be tagged as “Walk-in Prio”</p>
+                </div>
+                <div class="form-group form-check col-md-2">
+                    <input id="priority" 
+                    class="form-check-input" 
+                    type="checkbox" 
+                    data-toggle="toggle" 
+                    data-size="xs" 
+                    name="priority"
+                    [(ngModel)]="queue.priority">
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <button class="btn btn-primary"(click)="createQueue()" >Submit</button>
+            </div>
+        </form>
+    </div>    
+</div>
